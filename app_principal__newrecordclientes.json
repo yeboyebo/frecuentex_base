@@ -1,0 +1,13 @@
+{
+    "modifications": [
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/multiNewRecordClientes/forms/formClientes/fields/gb__datosGenerales/fields/email",
+            "value": {
+                "codagente": {
+                    "disabled": true
+                }
+            }
+        }
+    ]
+}

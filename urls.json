@@ -1,3 +1,18 @@
 {
-    "modifications": []
+    "modifications": [
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfactalma/lineasregstocks",
+            "value": {
+                "atributosarticulos": null
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/models/flfactalma/atributosarticulos",
+            "value": {
+                "articuloscomp": null
+            }
+        }
+    ]
 }

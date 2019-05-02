@@ -1,0 +1,50 @@
+{
+    "modifications": [
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/newRecordPresupuestoscli/fields/gb__datosGenerales/fields/codcliente/desc",
+            "value": {
+                "function": "getCliente"
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/newRecordPresupuestoscli/fields/gb__datosGenerales/fields/codcliente/function",
+            "value": {
+                "showpk": false
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/newRecordPresupuestoscli/fields/gb__datosGenerales/fields/fecha",
+            "value": {
+                "codpago": {}
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/newRecordPresupuestoscli/fields/gb__datosGenerales/fields/codpago",
+            "value": {
+                "codagente": {
+                    "disabled": true
+                }
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/newRecordPresupuestoscli/fields/gb__datosGenerales/fields/gb__Direccion/fields/coddir/desc",
+            "value": {
+                "function": "getDireccionCliente"
+            }
+        },
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/newRecordPresupuestoscli/fields/gb__datosGenerales/fields/gb__Direccion/fields/coddir/function",
+            "value": {
+                "params": [
+                    "codcliente"
+                ]
+            }
+        }
+    ]
+}

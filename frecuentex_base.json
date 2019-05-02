@@ -1,7 +1,36 @@
 {
     "name": "frecuentex_base",
     "modifications": {
-        "patchScript": [],
+        "patchScript": [
+            {
+                "path": "models/flfactppal/",
+                "name": "model_flfactppal__clientes_def.py"
+            },
+            {
+                "path": "models/flfactppal/",
+                "name": "model_flfactppal__clientes.py"
+            },
+            {
+                "path": "models/flfacturac/",
+                "name": "model_flfacturac__presupuestoscli_def.py"
+            },
+            {
+                "path": "apps/portal/viewset/",
+                "name": "app_portal__views_portal.py"
+            },
+            {
+                "path": "models/flfacturac/",
+                "name": "model_flfacturac__lineaspresupuestoscli_def.py"
+            },
+            {
+                "path": "models/flfacturac/",
+                "name": "model_flfacturac__lineaspresupuestoscli.py"
+            },
+            {
+                "path": "models/flfacturac/",
+                "name": "model_flfacturac__presupuestoscli.py"
+            }
+        ],
         "deleteFile": [],
         "patchJson": [
             {
@@ -11,6 +40,34 @@
             {
                 "name": "registros.json",
                 "path": "config/"
+            },
+            {
+                "path": "apps/principal/templates/principal/plantillas/",
+                "name": "app_principal__masterclientes.json"
+            },
+            {
+                "path": "apps/facturacion/templates/facturacion/plantillas/",
+                "name": "app_facturacion__masterpresupuestoscli.json"
+            },
+            {
+                "path": "apps/facturacion/templates/facturacion/plantillas/",
+                "name": "app_facturacion__newrecordpresupuestoscli.json"
+            },
+            {
+                "path": "apps/facturacion/templates/facturacion/plantillas/",
+                "name": "app_facturacion__newrecordlineaspresupuestoscli.json"
+            },
+            {
+                "path": "apps/facturacion/templates/facturacion/plantillas/",
+                "name": "app_facturacion__presupuestoscli.json"
+            },
+            {
+                "path": "apps/principal/templates/principal/plantillas/",
+                "name": "app_principal__newrecordclientes.json"
+            },
+            {
+                "path": "apps/facturacion/templates/facturacion/plantillas/",
+                "name": "app_facturacion__lineaspresupuestoscli.json"
             }
         ],
         "replaceFile": [
@@ -19,6 +76,23 @@
                 "path": "config/"
             }
         ],
-        "addFile": []
+        "addFile": [
+            {
+                "path": "models/flfactalma/",
+                "name": "model_flfactalma__atributosarticulos.py"
+            },
+            {
+                "path": "models/flfactalma/",
+                "name": "model_flfactalma__atributosarticulos_def.py"
+            },
+            {
+                "path": "models/flfactalma/",
+                "name": "model_flfactalma__articuloscomp.py"
+            },
+            {
+                "path": "models/flfactalma/",
+                "name": "model_flfactalma__articuloscomp_def.py"
+            }
+        ]
     }
 }

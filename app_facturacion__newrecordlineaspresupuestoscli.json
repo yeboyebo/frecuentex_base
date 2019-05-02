@@ -1,0 +1,25 @@
+{
+    "modifications": [
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/newRecordLineaspresupuestoscli/fields/gb__articulo",
+            "value": {
+                "gb__atributo": {
+                    "title": "Atributos",
+                    "fields": {
+                        "barcode": {
+                            "rel": "atributosarticulos",
+                            "key": "barcode",
+                            "function": "getBarCode",
+                            "params": [
+                                "referencia"
+                            ]
+                        },
+                        "talla": {},
+                        "color": {}
+                    }
+                }
+            }
+        }
+    ]
+}
