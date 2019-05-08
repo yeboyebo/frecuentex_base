@@ -10,6 +10,7 @@ import hashlib
 
 from models.flfactppal.usuarios import usuarios
 from models.flfactppal.agentes import agentes
+from datetime import datetime, date, time
 
 
 class frecuentex_base(yblogin):
@@ -62,6 +63,7 @@ class frecuentex_base(yblogin):
                 if user is not None:
                     login_auth(request, user)
                     accessControl.accessControl.registraAC()
+                    _i.inicia_codejercicio(username)
                 else:
                     return _i.login(request, 'Error de autentificación')
                 return HttpResponseRedirect("/")
@@ -69,6 +71,20 @@ class frecuentex_base(yblogin):
 
     def frecuentex_base_account_request(self, request):
         return HttpResponseRedirect("/")
+
+    def frecuentex_base_inicia_codejercicio(self, usuario):
+        hoy = datetime.now()
+        print("HOY:", hoy)
+        codEjercicio = qsatype.FLUtil.sqlSelect(u"ejercicios", u"codejercicio", "'{} '::Date between fechainicio and fechafin AND idempresa = 4".format(hoy))
+        print("CodEjercicio:", codEjercicio)
+        settingKey = "ejerUsr_" + usuario
+        valor = qsatype.FLUtil.sqlSelect(u"flsettings", u"valor", "flkey = '{}'".format(settingKey))
+        print("valor:", valor)
+        if valor:
+            qsatype.FLSqlQuery().execSql("UPDATE flsettings SET valor = '{}' WHERE flkey = '{}'".format(codEjercicio, settingKey))
+        else:
+            qsatype.FLSqlQuery().execSql("INSERT INTO flsettings(flkey,valor) values ('{}', '{}')".format(settingKey, codEjercicio))
+        return True
 
     def __init__(self, context=None):
         super().__init__(context)
@@ -81,4 +97,7 @@ class frecuentex_base(yblogin):
 
     def login(self, request, error=None):
         return self.ctx.frecuentex_base_login(request, error)
+
+    def inicia_codejercicio(self, usuario):
+        return self.ctx.frecuentex_base_inicia_codejercicio(usuario)
 
