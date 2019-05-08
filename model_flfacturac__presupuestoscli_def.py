@@ -22,7 +22,7 @@ class frecuentex_base(presupuestos_cliente):
                 codagente = qsatype.FLUtil.sqlSelect(u"agentes a INNER JOIN usuarios u ON a.idusuario = u.idusuario", u"codagente", ustr(u"u.idusuario = '", usuario, u"'"))
                 if not codagente:
                     codagente = '-1'
-                return [{'criterio': 'codagente__exact', 'valor': codagente}]
+                return [{'criterio': 'codagente__exact', 'valor': codagente}, {'criterio': 'codejercicio__exact', 'valor': 'UB19'}]
         return filters
 
     def frecuentex_base_esadmin(self, usuario):
