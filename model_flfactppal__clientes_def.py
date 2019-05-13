@@ -50,13 +50,19 @@ class frecuentex_base(alta_clientes):
     def frecuentex_base_iniciaValoresCursor(self, cursor=None):
         usuario = qsatype.FLUtil.nameUser()
         codGrupo = qsatype.FLUtil.sqlSelect(u"flusers", u"idgroup", ustr(u"iduser = '", usuario, u"' AND idgroup = 'admin'"))
-        if codGrupo:
-            codagente = ''
-        else:
+
+        # if codGrupo:
+        #     codagente = ''
+        # else:
+        #     codagente = qsatype.FLUtil.sqlSelect(u"agentes a INNER JOIN usuarios u ON a.idusuario = u.idusuario", u"codagente", ustr(u"u.idusuario = '", usuario, u"'"))
+        #     if not codagente:
+        #         codagente = ''
+        # cursor.setValueBuffer(u"codagente", codagente)
+
+        if not codGrupo:
             codagente = qsatype.FLUtil.sqlSelect(u"agentes a INNER JOIN usuarios u ON a.idusuario = u.idusuario", u"codagente", ustr(u"u.idusuario = '", usuario, u"'"))
-            if not codagente:
-                codagente = ''
-        cursor.setValueBuffer(u"codagente", codagente)
+            if codagente:
+                cursor.setValueBuffer(u"codagente", codagente)
         '''
         codCliente = qsatype.FLUtil.sqlSelect(u"clientes", u"codcliente", ustr(u"codcliente = '", cursor.valueBuffer("codcliente"), u"'"))
         if codCliente:
