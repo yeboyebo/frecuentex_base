@@ -1,0 +1,11 @@
+{
+    "modifications": [
+        {
+            "type": "insertAfterNode",
+            "path": "/layout/groupBoxCargaSEPA/className",
+            "value": {
+                "visible": false
+            }
+        }
+    ]
+}

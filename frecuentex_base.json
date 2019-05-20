@@ -68,6 +68,10 @@
             {
                 "path": "apps/facturacion/templates/facturacion/plantillas/",
                 "name": "app_facturacion__lineaspresupuestoscli.json"
+            },
+            {
+                "path": "apps/principal/templates/principal/plantillas/",
+                "name": "app_principal__clientes.json"
             }
         ],
         "replaceFile": [
