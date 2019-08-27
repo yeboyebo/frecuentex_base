@@ -12,6 +12,10 @@
         {
             "key": "presupuestos_cliente",
             "version": "v1.0"
+        },
+        {
+            "key": "tallcol_barcode",
+            "version": "v1.0"
         }
     ],
     "fk": "True"
